@@ -5,8 +5,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // middleware
-app.use(cors({origin: ['https://ecom-ema-jon.vercel.app'],
-    credentials: true}));
+app.use(cors({origin: ['https://ecom-emo-server.vercel.app'],
+    }));
 app.use(express.json());
 
 
@@ -55,9 +55,11 @@ async function run() {
       }
       const result = await productCollection.find(query).toArray();
 
-      
-
       res.send(result)
+      
+    })
+    app.post('/cart', async(req, res)=>{
+      res.send('john is cart on building')
       
     })
 
